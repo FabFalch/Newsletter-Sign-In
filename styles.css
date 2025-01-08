@@ -1,0 +1,192 @@
+:root {
+    --Tomato: hsl(4, 100%, 67%);
+    --DarkSlateGrey: hsl(234, 29%, 20%);
+    --CharcoalGrey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
+}
+
+/* Desktop Version*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: var(--DarkSlateGrey);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition-speed);
+}
+
+.newsletter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: var(--White);
+    
+}
+#sign-up-img {
+    max-width: 100%;  
+    height: auto;     
+    flex-shrink: 1;    
+}
+
+.left {
+    padding: 2rem;
+}
+
+.email-error-wrap{
+    display: flex;
+    justify-content: space-between;
+}
+
+#error{
+    color: red;
+    display: none;
+}
+
+
+h1 {
+    color: var(--DarkSlateGrey);
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+p {
+    color: var(--DarkSlateGrey);
+    margin-bottom: 1.5rem;
+}
+
+ul {
+    list-style: none;
+    margin-bottom: 2.5rem;
+}
+
+li {
+    color: var(--DarkSlateGrey);
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: center;
+}
+
+li::before {
+    content: url(./assets/images/icon-list.svg);
+    margin-right: 1rem;
+}
+
+.email-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: var(--DarkSlateGrey);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--Grey);
+    cursor: pointer;
+}
+
+button {
+    background-color: var(--DarkSlateGrey);
+    color: var(--White);
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: linear-gradient(to right, #FF527B, #FF6A3A);
+    box-shadow: 0px 16px 32px 0px rgba(255, 97, 85, 0.50);
+}
+
+/*Success*/
+
+.success-message{
+    background-color: white;
+    display: grid;
+    max-width: 430px;
+    height: 60vh;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem;
+    margin: auto;
+    border-radius: 1.5rem;
+    font-size: 0.9rem;
+    display:none ;
+}
+#success-tick{
+    margin-bottom: 1.5rem;
+}
+.dismiss-button-container{
+    display: grid;
+}
+.highlight-email{
+    font-weight: bold;
+}
+
+/*Media Query*/
+
+@media only screen and (max-width: 500px){
+    .newsletter-container {
+        flex-direction: column-reverse;
+        width: 100%;
+        padding: 0;
+
+    }
+
+    .right {
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
+
+    #sign-up-img {
+        content: url('./assets/images/illustration-sign-up-mobile.svg');
+        width: 100%;
+        display: block;
+        height: auto;
+        
+        
+    }
+    .success-message{
+    background-color: white;
+    display: grid;
+    min-width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem;
+    margin: auto;
+    border-radius: 0;
+    font-size: 0.9rem;
+    display: none;
+}
+
+    #success-tick{
+        margin-bottom: 1.5rem;
+    }
+}
+
+/*Fade Out Effect*/
+
+.fade-out{
+    opacity: 0;
+    transition: opacity 0.5 ease-in-out;
+}
+
